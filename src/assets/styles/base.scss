@@ -1,0 +1,62 @@
+/** flex wrap css module **/
+.flex-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+/** flex main wrap**/
+.flex-main__center {
+  justify-content: center !important;
+}
+.flex-main__start {
+  justify-content: flex-start !important;
+}
+.flex-main__end {
+  justify-content: flex-end !important;
+}
+.flex-main__between {
+  justify-content: space-between !important;
+}
+.flex-main__around {
+  justify-content: space-around !important;
+}
+
+/** flex item wrap **/
+.flex-item__start {
+  align-items: flex-start !important;
+}
+.flex-item__center {
+  align-items: center !important;
+}
+.flex-item__end {
+  align-items: flex-end !important;
+}
+.flex-item__stretch {
+  align-items: stretch !important;
+}
+/** flex self wrap **/
+.flex-self__start {
+  align-self: flex-start !important;
+}
+.flex-self__center {
+  align-self: center !important;
+}
+.flex-self__end {
+  align-self: flex-end !important;
+}
+
+/** flex wrap empty **/
+.flex-empty {
+  flex: 1;
+}
+.flex-wrap__column {
+  flex-direction: column !important;
+}
+
+.backgorund-image-pre {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

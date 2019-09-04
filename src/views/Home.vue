@@ -1,18 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="b-wrap">
+    <section class="b-main" :style="styles"></section>
+    <HomeBtmMenu></HomeBtmMenu>
+    <HomeSlideRight></HomeSlideRight>
+    <HomeSlideLeft></HomeSlideLeft>
+    <RouterView></RouterView>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HomeBtmMenu from './homePageManage/bottom/main'
+import HomeSlideRight from './homePageManage/slide/right/main'
+import HomeSlideLeft from './homePageManage/slide/left/main'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
-    HelloWorld
+    HomeBtmMenu,
+    HomeSlideRight,
+    HomeSlideLeft
+  },
+  data(){
+    return {
+      styles: {
+        backgroundImage: 'url('+ require('~~/index/bg_index.png') +')'
+      }
+    }
   }
 }
 </script>
+
+<style lang="scss">
+.b-wrap {
+  width: 100vw;
+  height: 100vh;
+
+  .b-main {
+    width: inherit;
+    height: inherit;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+</style>
