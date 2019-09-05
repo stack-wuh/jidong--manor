@@ -2,7 +2,7 @@
   <section class='my-page'>
     <section v-show="value" @click="handleClick" class="b-dialog"></section>
     <transition name="slide" mode="out-in">
-      <section v-if="value" class="b-wrap">
+      <section v-if="value" class="b-wrap" :style="styles">
         <header class="e-header flex-wrap flex-align__center flex-main__around">
           <div class="m-lf"></div>
           <div class="m-cc">
@@ -32,7 +32,8 @@
   },
   props: {
     value: Boolean,
-    subText: String
+    subText: String,
+    styles: Object
   },
   watch: {},
   computed: {},
