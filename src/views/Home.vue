@@ -4,6 +4,13 @@
     <HomeBtmMenu></HomeBtmMenu>
     <HomeSlideRight></HomeSlideRight>
     <HomeSlideLeft></HomeSlideLeft>
+    <HomeMiddleChicken></HomeMiddleChicken>
+    <!-- <HomeMiddleProgress 
+      v-model="progress" 
+      :style="p_style">
+    </HomeMiddleProgress> -->
+    <HomeMiddleEgg :style="p_style" ></HomeMiddleEgg>
+    <HomeMiddleEggWait :style="w_style"></HomeMiddleEggWait>
     <RouterView></RouterView>
   </div>
 </template>
@@ -12,19 +19,39 @@
 import HomeBtmMenu from './homePageManage/bottom/main'
 import HomeSlideRight from './homePageManage/slide/right/main'
 import HomeSlideLeft from './homePageManage/slide/left/main'
+import HomeMiddleChicken from './animateManage/eat/main'
+import HomeMiddleProgress from '@c/progress/main'
+import HomeMiddleEgg from '@v/homePageManage/widget/egg/main'
+import HomeMiddleEggWait from '@v/homePageManage/widget/waitEgg/main'
 
 export default {
   name: 'Home',
   components: {
     HomeBtmMenu,
     HomeSlideRight,
-    HomeSlideLeft
+    HomeSlideLeft,
+    HomeMiddleChicken,
+    HomeMiddleEgg,
+    HomeMiddleEggWait
   },
   data(){
     return {
       styles: {
         backgroundImage: 'url('+ require('~~/index/bg_index.png') +')'
-      }
+      },
+      p_style: {
+        position: 'absolute',
+        left: '18%',
+        top: '60%',
+        transform: 'translateX(-50%) translateY(-50%)'
+      },
+      w_style: {
+        position: 'absolute',
+        left: '18%',
+        top: '45%',
+        transform: 'translateX(-50%) translateY(-50%)'
+      },
+      progress: 100
     }
   }
 }

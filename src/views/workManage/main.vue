@@ -137,15 +137,7 @@
     }
 
     button {
-      width: 1.4rem;
-      padding: .14rem;
-      font-size: 14px;
-      outline: none;
-      border: none;
-      color: #FFBB33;
-      border-radius: 20px;
-      background-color: #fff;
-      box-sizing: border-box;
+      @extend .button-default;
     }
   }
 

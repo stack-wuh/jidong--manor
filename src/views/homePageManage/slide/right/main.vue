@@ -5,13 +5,15 @@
        class="b-list__item" 
        v-for="(item, index) in List"
        :key="item.id + index + 's'"
-       :style="item.style">
+       :style="item.style"
+       @click.stop="handleJump(item)">
       </div>
     </section>
   </section>
 </template>
 
 <script>
+ import { Events } from '@/mixins/events'
  const List = [
    {
      id: 1,
@@ -19,7 +21,9 @@
      pic: require('~~/index/bg_stage.png'),
      style: {
        backgroundImage: 'url(' + require('~~/index/bg_stage.png') + ')'
-     }
+     },
+     path: '/index/stage',
+     events: [['onShowPopupStage', true]]
    },
    {
      id: 2,
@@ -41,9 +45,20 @@
       List
     }
   },
-  methods: {},
+  methods: {
+    handleJump(item){
+      let { path, events } = item
+      let { $router, $route } = this
+      events.forEach(([e, ...p]) => {
+        this.handleEmitter(e, p)
+      })
+      if($route.path != path) {
+        $router.push({ path, query: {} })
+      }
+    }
+  },
   created(){},
-  mixins: []
+  mixins: [Events]
  }
 </script>
 
