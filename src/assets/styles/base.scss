@@ -55,8 +55,41 @@
   flex-direction: column !important;
 }
 
+
+/** 背景图片设置 **/
 .backgorund-image-pre {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+/** button设置 **/
+.button-default {
+  width: 1.4rem;
+  padding: .14rem;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  color: #FFBB33;
+  border-radius: 20px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/** position **/
+.position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.position-level {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.position-vertival {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
