@@ -45,6 +45,7 @@
   methods: {
     handleClick(){
       this.$emit('click', false)
+      this.$emit('on-close')
     }
   },
   created(){},

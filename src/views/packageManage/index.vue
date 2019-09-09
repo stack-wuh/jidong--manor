@@ -2,7 +2,7 @@
   <section class='my-page'>
     <my-popup
       subText="使用背包内的道具, 可以获得对应的奖励" 
-      @on-close="() => { this.isShow = false }"
+      @on-close="handleClose"
       v-model="isShow">
         <img 
           class="m-header" 
@@ -26,6 +26,7 @@
 
 <script>
  import MyPopup from '@c/popup/main.vue'
+ import DialogClose from '@/mixins/close.js'
 
  const List = [
    {
@@ -77,6 +78,7 @@
   components: {
     MyPopup
   },
+  inject: ['Home'],
   props: {},
   watch: {},
   computed: {},
@@ -97,7 +99,7 @@
       this.isShow = e
     })
   },
-  mixins: []
+  mixins: [DialogClose]
  }
 </script>
 

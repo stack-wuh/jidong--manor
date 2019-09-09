@@ -1,7 +1,7 @@
 <template>
   <section class='my-page'>
     <my-popup
-      @on-close="() => { this.isShow = false }" 
+      @on-close="handleClose" 
       subText="每天完成日常任务, 可获得生蛋寻宝专用道具"
       v-model="isShow">
         <img slot="title" class="m-header" :src="require('~~/index/bg_work.png')" alt="title">
@@ -25,6 +25,7 @@
 
 <script>
  import MyPopup from '@c/popup/main.vue'
+ import DialogClose from '@/mixins/close.js'
 
  const List = [
    {
@@ -70,6 +71,7 @@
     MyPopup
   },
   props: {},
+  inject: ['Home'],
   watch: {},
   computed: {},
   data(){
@@ -89,7 +91,7 @@
       this.isShow = e
     })
   },
-  mixins: []
+  mixins: [DialogClose]
  }
 </script>
 

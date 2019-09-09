@@ -1,7 +1,7 @@
 <template>
   <section class='my-page'>
     <my-popup
-      @on-close="() => { this.isShow = false }" 
+      @on-close="handleClose" 
       subText="使用寻宝卡寻宝, 单次最多寻宝24小时"
       v-model="isShow">
         <img slot="title" class="m-header" :src="require('~~/index/bg_search.png')" alt="title">
@@ -19,6 +19,7 @@
 
 <script>
  import MyPopup from '@c/popup/main.vue'
+ import DialogClose from '@/mixins/close.js'
  const List = [
    {
      id: 1,
@@ -50,6 +51,7 @@
   components: {
     MyPopup
   },
+  inject: ['Home'],
   props: {},
   watch: {},
   computed: {},
@@ -70,7 +72,7 @@
       this.isShow = e
     })
   },
-  mixins: []
+  mixins: [DialogClose]
  }
 </script>
 

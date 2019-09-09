@@ -1,7 +1,7 @@
 <template>
   <section class='my-page'>
     <my-popup
-     @on-close="() => { this.isShow = false }"
+     @on-close="handleClose"
      subText="分享给好友, 让好友帮你加速产蛋吧"
      v-model="isShow">
       <img class="m-header" :src="require('~~/index/bg_runing.png')" alt="title">
@@ -20,6 +20,7 @@
 
 <script>
  import MyPopup from '@c/popup/main.vue'
+ import DialogClose from '@/mixins/close.js'
  
  const List = [
    {
@@ -55,6 +56,7 @@
     MyPopup
   },
   props: {},
+  inject: ['Home'],
   watch: {},
   computed: {},
   data(){
@@ -74,7 +76,7 @@
       this.isShow = e
     })
   },
-  mixins: []
+  mixins: [DialogClose]
  }
 </script>
 

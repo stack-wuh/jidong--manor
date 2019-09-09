@@ -11,6 +11,7 @@
     </HomeMiddleProgress> -->
     <HomeMiddleEgg :style="p_style" ></HomeMiddleEgg>
     <HomeMiddleEggWait :style="w_style"></HomeMiddleEggWait>
+    <HomeMiddleEggSearch :style="s_style"></HomeMiddleEggSearch>
     <RouterView></RouterView>
   </div>
 </template>
@@ -23,6 +24,7 @@ import HomeMiddleChicken from './animateManage/eat/main'
 import HomeMiddleProgress from '@c/progress/main'
 import HomeMiddleEgg from '@v/homePageManage/widget/egg/main'
 import HomeMiddleEggWait from '@v/homePageManage/widget/waitEgg/main'
+import HomeMiddleEggSearch from '@v/homePageManage/widget/searchEgg/main'
 
 export default {
   name: 'Home',
@@ -32,7 +34,13 @@ export default {
     HomeSlideLeft,
     HomeMiddleChicken,
     HomeMiddleEgg,
-    HomeMiddleEggWait
+    HomeMiddleEggWait,
+    HomeMiddleEggSearch
+  },
+  provide(){
+    return {
+      Home: this
+    }
   },
   data(){
     return {
@@ -51,7 +59,19 @@ export default {
         top: '45%',
         transform: 'translateX(-50%) translateY(-50%)'
       },
+      s_style: {
+        position: 'absolute',
+        left: '18%',
+        top: '35%',
+        transform: 'translateX(-50%) translateY(-50%)'
+      },
       progress: 100
+    }
+  },
+  methods: {
+    goBackHome(){
+      let { $router } = this
+      $router.push({ path: '/' })
     }
   }
 }
