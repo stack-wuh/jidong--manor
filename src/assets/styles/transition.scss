@@ -1,0 +1,11 @@
+@import './var.scss';
+
+.slide-in-linear-enter-avtive,
+.slide-in-linear-leave-active {
+  transition: all .3s linear;
+}
+.slide-in-linear-enter,
+.slide-in-linear-leave,
+.slide-in-linear-leave-active{
+  opacity: 0;
+}
