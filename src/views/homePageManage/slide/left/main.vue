@@ -52,32 +52,38 @@
   position: fixed;
   top: .8rem;
   left: .8rem;
-  width: 3rem;
-  height: 1.5rem;
+  width: 2.2rem;
+  height: 1rem;
   background-color: #fff;
   border-radius: 50px;
 
   .b-list {
-    height: 1.5rem;
+    height: 1rem;
     align-items: center !important;
   }
   .b-item {
     position: relative;
     flex: 1;
-    height: 1.2rem;
+    width: 1rem;
+    height: 1rem;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     box-sizing: border-box;
     border-radius: 50%;
 
+  }
+  .b-item:last-of-type {
+    width: 1rem;
+    height: .8rem;
+    // margin-left: .3rem;
     .m-tips {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
       color: #fff;
-      font-size: .4rem;
+      font-size: .3rem;
       &::after {
         content: '+';
         color: #fff;
