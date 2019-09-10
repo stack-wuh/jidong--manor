@@ -2,7 +2,8 @@
   <section class='my-page'>
     <my-popup
       subText="使用背包内的道具, 可以获得对应的奖励" 
-      @on-close="handleClose"
+      @on-close="handleClose
+      "
       v-model="isShow">
         <img 
           class="m-header" 

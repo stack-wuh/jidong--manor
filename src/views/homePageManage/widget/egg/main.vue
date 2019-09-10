@@ -1,7 +1,12 @@
 <template>
   <section class='my-page'>
-    <div class="b-egg">
-      <img class="b-egg__logo" :src="require('~~/index/bg_egg_small.png')" alt="egg">
+    <div 
+      @click="() => { $emit('click') }"
+      class="b-egg">
+      <img
+        class="b-egg__logo" 
+        :src="require('~~/index/bg_egg_small.png')" 
+        alt="egg">
       <my-progress 
         class="b-progress" 
         v-model="progress" 
@@ -23,7 +28,7 @@
   computed: {},
   data(){
     return {
-      progress: 0
+      progress: 10
     }
   },
   methods: {},

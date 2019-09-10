@@ -1,6 +1,7 @@
 <template>
   <section class='my-page'>
     <my-popup
+      @on-close="handleClose"
       :styles="{backgroundColor: '#F5F5F5'}"
       subText="使用金豆购买道具, 加速产蛋疯狂寻宝"
       v-model="isShow">
@@ -27,6 +28,7 @@
 
 <script>
  import MyPopup from '@c/popup/main.vue'
+ import Close from '@/mixins/close.js'
  const List = [
    {
      id: 1,
@@ -115,12 +117,13 @@
     MyPopup
   },
   props: {},
+  inject: ['Home'],
   watch: {},
   computed: {},
   data(){
     return {
       List,
-      isShow: true
+      isShow: false
     }
   },
   methods: {},
@@ -135,7 +138,7 @@
       this.isShow = f
     })
   },
-  mixins: []
+  mixins: [Close]
  }
 </script>
 
