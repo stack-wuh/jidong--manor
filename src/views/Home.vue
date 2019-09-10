@@ -3,13 +3,9 @@
     <section class="b-main" :style="styles"></section>
     <HomeBtmMenu></HomeBtmMenu>
     <HomeSlideRight></HomeSlideRight>
-    <HomeSlideLeft></HomeSlideLeft>
+    <HomeSlideLeft ref="head"></HomeSlideLeft>
     <HomeMiddleChicken></HomeMiddleChicken>
-    <!-- <HomeMiddleProgress 
-      v-model="progress" 
-      :style="p_style">
-    </HomeMiddleProgress> -->
-    <HomeMiddleEgg :style="p_style" ></HomeMiddleEgg>
+    <HomeMiddleEgg ref="el" @click="handleWidgetEggClick" :style="p_style" ></HomeMiddleEgg>
     <HomeMiddleEggWait :style="w_style"></HomeMiddleEggWait>
     <HomeMiddleEggSearch :style="s_style"></HomeMiddleEggSearch>
     <RouterView></RouterView>
@@ -26,6 +22,7 @@ import HomeMiddleEgg from '@v/homePageManage/widget/egg/main'
 import HomeMiddleEggWait from '@v/homePageManage/widget/waitEgg/main'
 import HomeMiddleEggSearch from '@v/homePageManage/widget/searchEgg/main'
 
+import moveAnimate from '@/utils/animate.js'
 export default {
   name: 'Home',
   components: {
@@ -65,14 +62,27 @@ export default {
         top: '35%',
         transform: 'translateX(-50%) translateY(-50%)'
       },
-      progress: 100
+      progress: 100,
+      mAinstance: null
     }
   },
   methods: {
+    handleWidgetEggClick(){
+      this.mAinstance.createEl()
+      // this.mAinstance.destroy()
+    },
     goBackHome(){
       let { $router } = this
       $router.push({ path: '/' })
     }
+  },
+  mounted(){
+    let obj = {
+      el: this.$refs.el,
+      target: this.$refs.head
+    }
+    var mA = new moveAnimate(obj.el, obj.target)
+    this.mAinstance = mA
   }
 }
 </script>

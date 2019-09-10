@@ -93,3 +93,31 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(2rem);
+  }
+}
+.js-animate__translate {
+  animation: move .5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes move_lf {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1rem);
+  }
+  100% {
+    transform: translateX(2rem);
+  }
+}
+.js-animate__lf {
+  animation: move_lf .6s cubic-bezier(.5, .08, .95, .51) forwards;
+}
