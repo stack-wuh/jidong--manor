@@ -30,7 +30,9 @@ class Animate {
     this.moveTo.call(this, elem)
   }
   moveTo (elem) {
+    // eslint-disable-next-line no-unused-vars
     let { top, left } = this.posiB
+    // eslint-disable-next-line no-unused-vars
     let { top: aTop, left: aLeft } = this.posiA
     if (aTop >= top + 10) {
       elem.tid = setInterval(() => {
